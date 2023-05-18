@@ -40,14 +40,14 @@ if (await exists(fullPath)) {
 }
 
 // 保存原始数据
-const queswordsAll = mergeWords(words, wordsAlreadyDownload);
-await Deno.writeTextFile(fullPath, JSON.stringify(queswordsAll));
+// const queswordsAll = mergeWords(words, wordsAlreadyDownload);
+// await Deno.writeTextFile(fullPath, JSON.stringify(queswordsAll));
 
 // 更新 README.md
 const readme = await createReadme(queswordsAll);
 await Deno.writeTextFile("./README.md", readme);
 
 // 更新 archives
-const archiveText = createArchive(queswordsAll, yyyyMMdd);
-const archivePath = join("archives", `${yyyyMMdd}.md`);
-await Deno.writeTextFile(archivePath, archiveText);
+// const archiveText = createArchive(queswordsAll, yyyyMMdd);
+// const archivePath = join("archives", `${yyyyMMdd}.md`);
+// await Deno.writeTextFile(archivePath, archiveText);
